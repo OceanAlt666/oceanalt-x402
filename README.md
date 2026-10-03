@@ -20,6 +20,6 @@ const res = await fetchGuarded("https://seller.example/api/thing");
 
 ## Source
 
-This repository mirrors the published npm package [`@oceanalt/x402`](https://www.npmjs.com/package/@oceanalt/x402) (0.2.0) byte for byte. It needs the client [`@oceanalt/core`](https://www.npmjs.com/package/@oceanalt/core) as a peer dependency.
+`index.mjs`, `index.d.ts` and `package.json` are identical to the published npm package [`@oceanalt/x402`](https://www.npmjs.com/package/@oceanalt/x402) 0.2.0. It needs the client [`@oceanalt/core`](https://www.npmjs.com/package/@oceanalt/core) as a peer dependency.
 
 MIT © OceanAlt
