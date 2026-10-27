@@ -1,16 +1,50 @@
 {
   "name": "@oceanalt/x402",
-  "version": "0.2.0",
-  "description": "Payment-runtime guard for x402 clients: wraps fetch so that, at the moment a 402 asks for money, the endpoint is screened, the signed payment requirements are verified offline, the payee gets a pre-settlement decision and secrets never leave the agent. You keep your own x402 payer; we hold no keys.",
+  "version": "0.3.0",
+  "description": "Pre-payment checks for x402 clients. ./hook: an onBeforePaymentCreation hook for @x402/core that asks for allow, review or decline before the payment is signed and aborts when there is no answer (zero dependencies). Main entry: a fetch wrapper that screens the endpoint, verifies signed payment requirements offline and keeps secrets in the agent. We hold no keys.",
   "type": "module",
   "main": "./index.mjs",
   "types": "./index.d.ts",
-  "exports": { ".": { "import": "./index.mjs", "types": "./index.d.ts" } },
-  "files": ["index.mjs", "index.d.ts", "README.md"],
-  "peerDependencies": { "@oceanalt/core": "^0.2.0" },
-  "engines": { "node": ">=20" },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "types": "./index.d.ts"
+    },
+    "./hook": {
+      "import": "./hook.mjs",
+      "types": "./hook.d.ts"
+    }
+  },
+  "files": [
+    "index.mjs",
+    "index.d.ts",
+    "hook.mjs",
+    "hook.d.ts",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@oceanalt/core": "^0.2.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "license": "MIT",
   "homepage": "https://oceanalt.com/en/api-docs",
-  "bugs": { "email": "business@oceanalt.com" },
-  "keywords": ["x402", "agent-payments", "pre-settlement", "kya", "aml"]
+  "bugs": {
+    "email": "business@oceanalt.com"
+  },
+  "keywords": [
+    "x402",
+    "agent-payments",
+    "pre-settlement",
+    "kya",
+    "aml",
+    "onBeforePaymentCreation",
+    "x402-hook"
+  ],
+  "peerDependenciesMeta": {
+    "@oceanalt/core": {
+      "optional": true
+    }
+  }
 }
