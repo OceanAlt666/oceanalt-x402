@@ -21,6 +21,15 @@ const client = new x402Client()
 
 Zero dependencies (global `fetch`; Node 18+, browsers, Deno, Bun). Tested against `@x402/core` 2.28.0 with a stub scheme: the scheme is never called on decline, review or timeout. Not affiliated with or endorsed by Coinbase or the x402 Foundation.
 
+### Tests
+
+`test/hook.test.mjs` runs the hook against a mocked decision endpoint and against the real `@x402/core` client with a stub scheme. It checks that the scheme is never asked to sign on decline, on review, or when no answer arrives in time.
+
+```bash
+npm i --no-save @x402/core@2.28.0
+node --test test/
+```
+
 ## Fetch wrapper (main entry, needs `@oceanalt/core`)
 
 Wrap `fetch` so that, at the moment a 402 asks for money, three things happen before your payer signs:
