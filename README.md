@@ -27,7 +27,7 @@ Zero dependencies (global `fetch`; Node 18+, browsers, Deno, Bun). Tested agains
 
 ```bash
 npm i --no-save @x402/core@2.28.0
-node --test test/
+node --test test/hook.test.mjs
 ```
 
 ## Fetch wrapper (main entry, needs `@oceanalt/core`)
